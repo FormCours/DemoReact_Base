@@ -1,24 +1,48 @@
-import logo from './logo.svg';
+import { useEffect, useState } from 'react';
 import './App.css';
+import Calculatrice from './components/calculatrice/calculatrice-v2';
+import Horloge from './components/horloge/horloge';
+import MultiButton from './components/multi-button/multi-button';
+import PersonTable from './components/person-table/person-table';
+import Welcome from './components/welcome/welcome-v2';
+import MainHeader from './containers/main-header/main-header';
+
+import data from './data/person.json';
+
 
 function App() {
+
+  const [display, setDisplay] = useState(true);
+
+  const handleDisplay = () => {
+    console.log('Toggle');
+    setDisplay(d => !d);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <MainHeader />
+      <main className="App">
+        <h1>Demo 01</h1>
+        {/* <Welcome firstname='Zaza' lastname='Vanderquack' />
+        <hr />
+        <h2>Collection</h2>
+        <PersonTable people={data} />
+        <hr />
+        <h2>State</h2>
+        <MultiButton />
+        <hr /> 
+        <h2>Formulaire</h2>
+        <Calculatrice />*/}
+
+        <h2>Cycle de vie</h2>
+        <button onClick={handleDisplay} >Toggle</button>
+        {display && (
+          <Horloge />
+        )}
+
+      </main>
+    </>
   );
 }
 

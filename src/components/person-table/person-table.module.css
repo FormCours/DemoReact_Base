@@ -1,0 +1,21 @@
+table.person-table, table.person-table th, table.person-table td {
+    border:  forestgreen 1px solid;
+    border-collapse: collapse;
+}
+
+.head {
+    background-color: forestgreen;
+    color: bisque;
+}
+
+.woman {
+    background-color: orange;
+}
+
+.man {
+    background-color: violet;
+}
+
+.neutral {
+    background-color: snow;
+}
